@@ -59,3 +59,4 @@ if [[ -d $HETZNER/odoo ]] || [[ -d $HETZNER/vesta  ]] then
 else
 	echo -e "Seams like remoute directory doesn't mount. Check it. Canceling backuping.\n" >>$B_LOG
 	echo -e $LINE >> $B_LOG
+fi
