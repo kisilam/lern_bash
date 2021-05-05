@@ -1,0 +1,7 @@
+# Run backup task at 07.00 AM every day
+# Place file to /etc/cron.d/ directory and fix path to script
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+
+0 7 * * * root /root/bin/backup_hetzner.sh
