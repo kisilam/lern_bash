@@ -2,6 +2,7 @@
 #
 # Backup script for backuping VestaCP backups and Odoo-server to remote Hetzner Nextcloud storage
 # for ZozulyaGroup
+# with mount remoute dir then copy files to it and umount remoute dir
 # Written Andrii Kisil <kisilams@gmail.com>
 #
 
@@ -40,7 +41,7 @@ echo -e $cur_date >> $B_LOG
 if [[ -d $HETZNER/odoo ]] || [[ -d $HETZNER/vesta  ]] then
 	#Starting VestaCP backup
 	echo -e "Start backupping for VestaCP\n" >> $B_LOG
-	/usr/bin/rsync -avz --delete $v_backup $HETZNER/vesta/ >> $B_LOG
+	/usr/bin/rsync -avz --size-only --inplace --ignore-existing --delete $v_backup $HETZNER/vesta/ >> $B_LOG
 	echo -e "\n" >> $B_LOG
 	echo -e "Finished backup for VestaCP\n" >> $B_LOG
 	echo -e $LINE >> $B_LOG
@@ -49,7 +50,7 @@ if [[ -d $HETZNER/odoo ]] || [[ -d $HETZNER/vesta  ]] then
 	echo -e $LINE >> $B_LOG
 	echo -e $cur_date >> $B_LOG
 	echo -e "Start backupping for Odoo\n" >> $B_LOG
-	/usr/bin/rsync -avz --delete $odoo_backup $HETZNER/odoo/ >> $B_LOG
+	/usr/bin/rsync -avz --size-only --inplace --ignore-existing --delete $odoo_backup $HETZNER/odoo/ >> $B_LOG
 	echo -e "\n" >> $B_LOG
 	echo -e "Finished backup for Odoo\n" >> $B_LOG
 	echo -e $LINE >> $B_LOG
