@@ -11,7 +11,7 @@ DAV_FS=/usr/sbin/mount.davfs
 DAV_FS_U=/usr/sbin/umount.davfs
 
 # Remoute URL fro connect
-DAV_REMOUTE=https://nx17062.your-storageshare.de/remote.php/dav/files/Admin/backup/
+DAV_REMOUTE=https://xxxxxx.your-storageshare.de/remote.php/dav/files/Admin/backup/
 
 # VestaCP backup dir
 v_backup=/backup/
