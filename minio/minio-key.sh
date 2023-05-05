@@ -2,7 +2,7 @@
 #dst_dir for key
 DS_SSL_DIR=/home/sammy/.minio/certs/docs.movingboardsusa.com
 #Domain
-LE_DOMAIN=docs.movingboardsusa.com
+LE_DOMAIN=docs.example.com
 #User
 KEY_USER=minio-user
 #Group
